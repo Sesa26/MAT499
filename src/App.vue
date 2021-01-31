@@ -1,0 +1,47 @@
+<template>
+	<div id="app">
+		<mdb-navbar color="primary" position="top" dark>
+			<mdb-navbar-brand href="https://mdbootstrap.com/">
+				Navbar
+			</mdb-navbar-brand>
+			<mdb-navbar-toggler>
+				<mdb-navbar-nav>
+					<mdb-nav-item href="#/" active>Home</mdb-nav-item>
+					<mdb-nav-item href="#/alkanes">Alkanes</mdb-nav-item>
+					<mdb-nav-item href="#/alkenes">Alkenes</mdb-nav-item>
+					<mdb-nav-item href="#/alkynes">Alkynes</mdb-nav-item>
+				</mdb-navbar-nav>
+				<form>
+					<mdb-input type="text" class="text-white" placeholder="Search" aria-label="Search" label navInput waves waves-fixed />
+				</form>
+			</mdb-navbar-toggler>
+		</mdb-navbar>
+
+		<router-view />
+	</div>
+</template>
+
+<script>
+import { mdbNavbar, mdbNavbarBrand, mdbNavbarToggler, mdbNavbarNav, mdbNavItem } from "mdbvue";
+export default {
+	name: "NavbarPage",
+	components: {
+		mdbNavbar,
+		mdbNavbarBrand,
+		mdbNavbarToggler,
+		mdbNavbarNav,
+		mdbNavItem,
+	},
+};
+</script>
+
+<style lang="scss">
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+
+#app {
+	font-family: "Roboto", Helvetica, Arial, sans-serif;
+	margin-top: 100px;
+	text-align: center;
+	color: #2c3e50;
+}
+</style>
