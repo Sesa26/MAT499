@@ -10,23 +10,19 @@
 				<img src="@/assets/loader1.gif" alt="thumbnail" class="img-thumbna il" style="width: 100px" />
 			</mdb-col>
 			<mdb-col v-else-if="Invalid_name" col="5">
-				<!-- <mdb-alert color="danger"> -->
 				<p class="h3-responsive red-text font-weight-bold">
 					Invalid!
 				</p>
-				<!-- </mdb-alert> -->
+			
 			</mdb-col>
 			<mdb-col v-else col="5" class="d-flex">
 				<span class="big">C</span>
-				<mdb-input class="small nbox" outline label="" @input="convertFromMoleculaFormula" v-model="carbon" size="sm" style="" />
+				<mdb-input class="small nbox" id="carbon" type="number" outline label="" @input="carbonChange" @blur="convertFromMoleculaFormula" v-model="carbon" size="sm" style="" />
 				<span class="big">H</span>
-				<mdb-input class="small nbox" outline label=""  @input="hydrogenChange" v-model="hydrogen" size="sm" style="" />
-				<!-- <span class=" nbox border m-0 p-0" > 	
-					{{2*carbon}}				
-				</span> -->
+				<mdb-input class="small nbox" id="hydrogen" outline label=""  @input="hydrogenChange" @change="hydrogenChange" v-model="hydrogen" size="sm" style="" />
+			
 			</mdb-col>
 		</mdb-row>
-		<!-- <mdb-btn color="primary" size="md"> CONVERT</mdb-btn> -->
 	</div>
 </template>
 <script>
@@ -41,9 +37,9 @@ export default {
 	data() {
 		return {
 			carbon: 0,
+			name: "",
 			molecula_processing: false,
 			Invalid_name: false,
-			name: "butane",
 		};
 	},
 	computed: {
@@ -53,7 +49,6 @@ export default {
 			} else {
 				return 0;
 			}
-			
 		},
 	},
 	methods: {
@@ -90,6 +85,7 @@ export default {
 				this.carbon = 10;
 			}
 		},
+
 		convertFromMoleculaFormula() {
 			this.name = "";
 			if (this.carbon === 0) {
@@ -116,13 +112,15 @@ export default {
 				this.name = "decane";
 			}
 		},
+
 		hydrogenChange(event) {
 			console.log(event);
 			this.carbon = (event - 2) / 2;
 			this.convertFromMoleculaFormula();
 		},
-		carbonChange() {
-			// console.log(event);
+
+		carbonChange(event) {
+			console.log(event);
 			// this.carbon = (event - 2) / 2;
 			this.convertFromMoleculaFormula();
 		},
@@ -135,7 +133,7 @@ export default {
 }
 .nbox {
 	transform: translateY(10px);
-	width: 50px;
+	width: 55px;
 	height: 30px;
 }
 </style>
