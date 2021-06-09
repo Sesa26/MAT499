@@ -22,6 +22,7 @@
 				</form>
 			</mdb-navbar-toggler>
 		</mdb-navbar>
+		
 		<transition>
 			<router-view />
 		</transition>

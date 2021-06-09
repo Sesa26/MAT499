@@ -31,7 +31,7 @@
 					<horizontal />
 					<twoHydrogen v-if="i != carbon" />
 				</span>
-				<span class="align-self-center">OO\H</span>
+				<span class="align-self-center">OH</span>
 			</div>
 			<mdb-col v-else>
 				<mdb-icon class="flash animated infinite red-text" icon="exclamation-circle" size="3x" />

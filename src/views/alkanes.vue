@@ -67,6 +67,7 @@ export default {
 		},
 	},
 	methods: {
+		
 		convertFromName() {
 			if (this.name.length < 6) {
 				this.carbon = 0;
