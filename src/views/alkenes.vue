@@ -16,25 +16,60 @@
 			</mdb-col>
 			<mdb-col v-else col="5" class="d-flex">
 				<span class="big">C</span>
-				<mdb-input class="small nbox" id="carbon" outline type="number" label="" @input="carbonChange" @blur="convertFromMoleculaFormula" v-model="carbon" size="sm" style="" />
+				<mdb-input class="small nbox" id="carbon" type="number" :min="2" outline label="" @input="carbonChange" v-model="carbon" size="sm" style="" />
+				<!-- <mdb-input class="small nbox" id="carbon" type="number" outline label="" @input="carbonChange" @blur="convertFromMoleculaFormula" v-model="carbon" size="sm" style="" /> -->
 				<span class="big">H</span>
-				<mdb-input class="small nbox" id="hydrogen" outline label="" @input="hydrogenChange" @change="hydrogenChange" v-model="hydrogen" size="sm" style="" />
+				<mdb-input class="small nbox" id="hydrogen" outline label="" readOnly v-model="hydrogen" size="sm" style="" />
+			</mdb-col>
+		</mdb-row>
+		<p class="text-center h4 blue lighten-5">Stuctural Fomula</p>
+		<mdb-row class="justify-content-center">
+			<div class="d-flex " v-if="carbon != 0">
+				<!-- <span v-if="carbon == 2">
+					<twoHydrogen />
+					<span class="doublbond align-self-center border-top border-bottom border-dark">.</span>
+					<twoHydrogen />
+				</span>
+				<span v-else> -->
+					<span class="align-self-center" v-if="carbon == 2">H</span>
+				<initialHydrogen v-else />
+
+				<horizontal />
+				<span v-for="i in mids" :key="i" class="d-flex">
+					<twoHydrogen v-if="i != carbon" />
+					<horizontal v-if="i != carbon" />
+				</span>
+
+				<span class="element">
+					<span>H</span>
+					<vertical />
+					<span>C</span>
+				</span>
+				<span class="doublbond align-self-center border-top border-bottom border-dark">.</span>
+				<twoHydrogen />
+
+				<!-- </span> -->
+			</div>
+			<mdb-col v-else>
+				<mdb-icon class="flash animated infinite red-text" icon="exclamation-circle" size="3x" />
+				<p class="h5 red-text font-weight-bold mt-4">Invalid chemical</p>
 			</mdb-col>
 		</mdb-row>
 	</div>
 </template>
 <script>
-import { mdbInput, mdbRow, mdbCol } from "mdbvue";
+import { mdbInput, mdbRow, mdbCol, mdbIcon } from "mdbvue";
 export default {
-	name: "Input",
+	name: "alkenes",
 	components: {
 		mdbInput,
 		mdbRow,
 		mdbCol,
+		mdbIcon,
 	},
 	data() {
 		return {
-			carbon: "",
+			carbon: 0,
 			name: "",
 			molecula_processing: false,
 			Invalid_name: false,
@@ -42,17 +77,20 @@ export default {
 	},
 	computed: {
 		hydrogen() {
-			if (this.carbon !== 0) {
+			if (this.carbon != 0) {
 				return this.carbon * 2;
 			} else {
-				return "";
+				return 0;
 			}
+		},
+		mids() {
+			return this.carbon > 2 ? this.carbon - 3 : 0;
 		},
 	},
 	methods: {
 		convertFromName() {
 			if (this.name.length < 6) {
-				this.carbon = "";
+				this.carbon = 0;
 				// this.Invalid_name =true;
 				return;
 			}
@@ -86,38 +124,36 @@ export default {
 
 		convertFromMoleculaFormula() {
 			this.name = "";
-			if (this.carbon === 1) {
+
+			if (this.carbon == 0) {
+				this.name = "invalid";
+			} else if (this.carbon == 1) {
 				this.name = "methene";
-			} else if (this.carbon === 2) {
+			} else if (this.carbon == 2) {
 				this.name = "ethene";
-			} else if (this.carbon === 3) {
+			} else if (this.carbon == 3) {
 				this.name = "propene";
-			} else if (this.carbon === 4) {
+			} else if (this.carbon == 4) {
 				this.name = "butene";
-			} else if (this.carbon === 5) {
+			} else if (this.carbon == 5) {
 				this.name = "pentene";
-			} else if (this.carbon === 6) {
+			} else if (this.carbon == 6) {
 				this.name = "hexene";
-			} else if (this.carbon === 7) {
+			} else if (this.carbon == 7) {
 				this.name = "heptene";
-			} else if (this.carbon === 8) {
+			} else if (this.carbon == 8) {
 				this.name = "octene";
-			} else if (this.carbon === 9) {
+			} else if (this.carbon == 9) {
 				this.name = "nonene";
-			} else if (this.carbon === 10) {
+			} else if (this.carbon == 10) {
 				this.name = "decene";
 			}
 		},
-
-		hydrogenChange(event) {
-			console.log(event);
-			this.carbon = event / 2;
-			this.convertFromMoleculaFormula();
-		},
-
-		carbonChange(event) {
-			console.log(event);
-			// this.carbon = (event - 2) / 2;
+		carbonChange() {
+			if(this.carbon <2 ){
+				this.carbon = 2;
+				return;
+			}
 			this.convertFromMoleculaFormula();
 		},
 	},
@@ -129,7 +165,12 @@ export default {
 }
 .nbox {
 	transform: translateY(10px);
-	width: 55px;
+	width: 70px;
 	height: 30px;
+}
+.doublbond {
+	height: 5px;
+	width: 20px;
+	border-width: 2px;
 }
 </style>

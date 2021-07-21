@@ -16,6 +16,7 @@
 
 		<mdb-container>
 			<section class="my-5">
+	
 				<h2 class="h1-responsive font-weight-bold text-center my-5">Why is it so great?</h2>
 				<p class="lead grey-text w-responsive text-center mx-auto mb-5">
 					Organic chemistry is phenomenal because it is the study of life and all the chemical reactions related to life. Most careers apply an understanding of organic chemistry, such as doctors and chemical engineers.
@@ -77,7 +78,7 @@ export default {
 		mdbRow,
 		mdbCol,
 		mdbIcon,
-		mdbCarousel,		
+		mdbCarousel,
 	},
 	data() {
 		return {
