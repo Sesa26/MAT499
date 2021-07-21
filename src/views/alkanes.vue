@@ -4,7 +4,7 @@
 		<mdb-row class="justify-content-center">
 			<mdb-col col="5"> <mdb-input v-model="name" @change="convertFromName" outline label="IUPAC Name" /> </mdb-col>
 		</mdb-row>
-		<p class="text-center h4 blue lighten-5">Molecular Fomula</p>
+		<p class="text-center h4 blue lighten-5">Molecular Formula</p>
 		<mdb-row class="justify-content-center">
 			<mdb-col v-if="molecula_processing">
 				<img src="@/assets/loader1.gif" alt="thumbnail" class="img-thumbna il" style="width: 100px" />
@@ -67,6 +67,7 @@ export default {
 		},
 	},
 	methods: {
+		
 		convertFromName() {
 			if (this.name.length < 6) {
 				this.carbon = 0;
