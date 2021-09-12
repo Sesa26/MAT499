@@ -1,8 +1,8 @@
 <template>
 	<div id="app">
 		<mdb-navbar color="primary" position="top" dark>
-			<mdb-navbar-brand href="https://mdbootstrap.com/">
-				Navbar
+			<mdb-navbar-brand href="#/">
+				Sesa
 			</mdb-navbar-brand>
 			<mdb-navbar-toggler>
 				<mdb-navbar-nav>
