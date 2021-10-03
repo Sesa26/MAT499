@@ -4,6 +4,7 @@ import Home from './views/Home.vue'
 import Alkanes from './views/alkanes.vue'
 import Alkenes from './views/alkenes.vue'
 import Alkynes from './views/alkynes.vue'
+import CyclicAlkanes from "./views/CyclicAlkanes.vue";
 import Alkyhalides from './views/alkyhalides.vue'
 import alcohols from "./views/alcohols.vue";
 import aldehydes from "./views/aldehydes.vue";
@@ -24,6 +25,11 @@ export default new Router({
 			path: "/alkanes",
 			name: "alkanes",
 			component: Alkanes,
+		},
+		{
+			path: "/cyclicalkanes",
+			name: "cyclicalkanes",
+			component: CyclicAlkanes,
 		},
 		{
 			path: "/alkenes",

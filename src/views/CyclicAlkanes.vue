@@ -1,9 +1,9 @@
 <template>
 	<div class="container-fluid">
-		<p class="white-text h2 blue darken-3 ">ALDEHYDES</p>
+		<p class="white-text h2 blue darken-3 ">Cyclic Alkanes</p>
 		<mdb-row class="justify-content-center">
 			<mdb-col col="5"> <mdb-input v-model="name" @change="convertFromName" outline label="IUPAC Name" /> </mdb-col>
-		</mdb-row>	
+		</mdb-row>
 		<p class="text-center h4 blue lighten-5">Molecular Fomula</p>
 		<mdb-row class="justify-content-center">
 			<mdb-col v-if="molecula_processing">
@@ -16,36 +16,19 @@
 			</mdb-col>
 			<mdb-col v-else col="5" class="d-flex">
 				<span class="big">C</span>
-				<mdb-input class="small nbox" id="carbon" type="number" :min="1" outline label="" @input="carbonChange" v-model="carbon" size="sm" style="" />
+				<mdb-input class="small nbox" id="carbon" type="number" :min="2" outline label="" @input="carbonChange" v-model="carbon" size="sm" style="" />
 				<!-- <mdb-input class="small nbox" id="carbon" type="number" outline label="" @input="carbonChange" @blur="convertFromMoleculaFormula" v-model="carbon" size="sm" style="" /> -->
 				<span class="big">H</span>
 				<mdb-input class="small nbox" id="hydrogen" outline label="" readOnly v-model="hydrogen" size="sm" style="" />
-				<span class="big">O</span>
+                //https://github.com/Sesa26/MAT499/blob/main/src/assets/cycloalkanes/cyclodecane.png
 			</mdb-col>
 		</mdb-row>
-		<p class="text-center h4 blue lighten-5  my-4">Stuctural Fomula</p>
+		<p class="text-center h4 blue lighten-5">Structural Formula</p>
 		<mdb-row class="justify-content-center">
-			<div class="d-flex" v-if="carbon != 0">
+			<div class="d-flex " v-if="carbon != 0">
+				<img :src="`@/assets/cycloalkanes/cyclobutane.png`" :alt="name" class="img-thumbna il" style="width: 100px" />
+				<!-- <img :src="`@/assets/cycloalkanes/${name}.png`" alt="thumbnail" class="img-thumbna il" style="width: 100px" /> -->
 				
-				<span class="align-self-center" v-if="carbon == 1">H</span>
-				<initialHydrogen v-else />
-
-
-				<span v-for="i in mids" :key="i" class="d-flex">
-					<horizontal />
-					<twoHydrogen v-if="i != carbon" />
-				</span>
-					<horizontal />
-				<span class="d-flex flex-column ">
-					<span>O</span>
-					<span class="verticaldbond border-dark border-left border-right align-self-center "> .</span>
-					<span>C</span>
-					<span class="white white-text">.</span>
-					<span class="white white-text">.</span>
-				
-				</span>
-					<horizontal />
-				<span class="align-self-center">H</span>
 			</div>
 			<mdb-col v-else>
 				<mdb-icon class="flash animated infinite red-text" icon="exclamation-circle" size="3x" />
@@ -57,7 +40,7 @@
 <script>
 import { mdbInput, mdbRow, mdbCol, mdbIcon } from "mdbvue";
 export default {
-	name: "aldehydes",
+	name: "alkanes",
 	components: {
 		mdbInput,
 		mdbRow,
@@ -75,26 +58,24 @@ export default {
 	computed: {
 		hydrogen() {
 			if (this.carbon != 0) {
-				return this.carbon * 2 ;
+				return this.carbon * 2;
 			} else {
 				return 0;
 			}
 		},
-		mids(){
-			return this.carbon>1? this.carbon-2:0;
-		}
+	
 	},
 	methods: {
 		convertFromName() {
-			if (this.name.length < 6) {
-				this.carbon = 0;
-				// this.Invalid_name =true;
-				return;
-			}
+			// if (this.name.length < 6) {
+			// 	this.carbon = 0;
+			// 	return;
+			// }
 
 			let sub = this.name;
 			sub.toLowerCase();
-			sub = sub.replace("anal", "");
+			sub = sub.replace("ane", "");
+			sub = sub.replace("cyclo", "");
 
 			if (sub === "meth") {
 				this.carbon = 1;
@@ -122,31 +103,31 @@ export default {
 		convertFromMoleculaFormula() {
 			this.name = "";
 
-			if (this.carbon == 0) {
-				this.name = "invalid";
-			} else if (this.carbon == 1) {
-				this.name = "methanal";
-			} else if (this.carbon == 2) {
-				this.name = "ethanal";
-			} else if (this.carbon == 3) {
-				this.name = "propanal";
-			} else if (this.carbon == 4) {
-				this.name = "butanal";
-			} else if (this.carbon == 5) {
-				this.name = "pentanal";
-			} else if (this.carbon == 6) {
-				this.name = "hexanal";
-			} else if (this.carbon == 7) {
-				this.name = "heptanal";
-			} else if (this.carbon == 8) {
-				this.name = "octanal";
-			} else if (this.carbon == 9) {
-				this.name = "nonanal";
-			} else if (this.carbon == 10) {
-				this.name = "decanal";
+			if (this.carbon == 0 || this.carbon == 1 || this.carbon == 2) {
+				this.name = "invalid";			
+			} else if (this.carbon === 3) {
+				this.name = "cyclopropane";
+			} else if (this.carbon === 4) {
+				this.name = "cyclobutane";
+			} else if (this.carbon === 5) {
+				this.name = "cyclopentane";
+			} else if (this.carbon === 6) {
+				this.name = "cyclohexane";
+			} else if (this.carbon === 7) {
+				this.name = "cycloheptane";
+			} else if (this.carbon === 8) {
+				this.name = "cyclooctane";
+			} else if (this.carbon === 9) {
+				this.name = "cyclononane";
+			} else if (this.carbon === 10) {
+				this.name = "cyclodecane";
 			}
 		},
 		carbonChange() {
+			if(this.carbon <3 ){
+				this.carbon = 3;
+				return;
+			}
 			this.convertFromMoleculaFormula();
 		},
 	},
@@ -161,11 +142,9 @@ export default {
 	width: 70px;
 	height: 30px;
 }
-.verticaldbond{
-	width: 5px;
-	border-width: 5px;
-	border-left: 2px;
-	border-right: 2px;
-	border-color: black;
+.doublbond {
+	height: 5px;
+	width: 20px;
+	border-width: 2px;
 }
 </style>

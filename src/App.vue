@@ -2,11 +2,10 @@
 	<div id="app">
 		<mdb-navbar color="primary" position="top" dark>
 			<mdb-navbar-brand href="#/">
-				Sesa
+				Home
 			</mdb-navbar-brand>
 			<mdb-navbar-toggler>
 				<mdb-navbar-nav>
-					<mdb-nav-item href="#/" active>Home</mdb-nav-item>
 					<mdb-nav-item href="#/alkanes">Alkanes</mdb-nav-item>
 					<mdb-nav-item href="#/alkenes">Alkenes</mdb-nav-item>
 					<mdb-nav-item href="#/alkynes">Alkynes</mdb-nav-item>

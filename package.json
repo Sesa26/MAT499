@@ -40,7 +40,7 @@
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
-    "root": true,
+    "root": false,
     "env": {
       "node": true
     },
@@ -57,7 +57,8 @@
     "overrides": [
       {
         "files": [
-          "**/__tests__/*.{j,t}s?(x)"
+          "**/__tests__/*.{j,t}s?(x)",
+          "**/*.vue"
         ],
         "env": {
           "jest": true

@@ -24,7 +24,11 @@
 		</mdb-row>
 		<p class="text-center h4 blue lighten-5">Stuctural Fomula</p>
 		<mdb-row class="justify-content-center">
-			<div class="d-flex" v-if="carbon != 0">
+			<div v-if="isCyclic">
+				<img src="@/assets/loader1.gif" alt="thumbnail" class="img-thumbna il" style="width: 100px" />
+
+			</div>
+			<div class="d-flex" v-else-if="carbon != 0">
 				<initialHydrogen />
 				<span v-for="i in carbon" :key="i" class="d-flex">
 					<horizontal />
@@ -55,6 +59,7 @@ export default {
 			name: "",
 			molecula_processing: false,
 			Invalid_name: false,
+			isCyclic:false
 		};
 	},
 	computed: {

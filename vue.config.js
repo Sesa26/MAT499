@@ -1,1 +1,2 @@
-module.exports = { publicPath: '.' }
+module.exports = { publicPath: '.',
+lintOnSave: false }
