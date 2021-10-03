@@ -1,7 +1,7 @@
 <template>
 	<div id="app">
-		<mdb-navbar color="primary" position="top" dark>
-			<mdb-navbar-brand href="#/">
+		<mdb-navbar color="indigo darken-4" position="top" dark>
+			<mdb-navbar-brand :to="{name:'home'}">
 				Home
 			</mdb-navbar-brand>
 			<mdb-navbar-toggler>
@@ -46,7 +46,7 @@ export default {
 
 #app {
 	font-family: "Roboto", Helvetica, Arial, sans-serif;
-	margin-top: 100px;
+	margin-top: 0px;
 	text-align: center;
 	color: #2c3e50;
 }
