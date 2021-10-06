@@ -7,6 +7,7 @@
 			<mdb-navbar-toggler>
 				<mdb-navbar-nav>
 					<mdb-nav-item href="#/alkanes">Alkanes</mdb-nav-item>
+					<mdb-nav-item href="#/cyclicalkanes">Cycloalkane</mdb-nav-item>
 					<mdb-nav-item href="#/alkenes">Alkenes</mdb-nav-item>
 					<mdb-nav-item href="#/alkynes">Alkynes</mdb-nav-item>
 					<mdb-nav-item href="#/alkyhalides">Alkyl halides</mdb-nav-item>
