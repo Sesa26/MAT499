@@ -23,13 +23,15 @@
 		</mdb-parallax> -->
 
 						<h1 class="h1-reponsive  mt-5 font-weight-bold">
-							<strong class="grey-text font-weight-bold">ORGANIC CHEMISTRY</strong>
+							<strong class="mdb-color-text font-weight-bold">ORGANIC CHEMISTRY</strong>
 						</h1>
-						<mdb-row class="m pt-5 justify-content-center flex-grow z-depth-2">
+						
+						<mdb-row class="  pt-3 justify-content-center flex-grow z">
+						
 							<mdb-col col="6" md="5" lg="6" class="text-right justify-content-right ">
-								<mdb-input @blur="search" label="Organic  " class="z-depth-1 white" size="lg" outline v-model="value" />
+								<mdb-input @blur="search" label="Organic  "  class="z-depth-1 white" size="lg" outline v-model="value" />
 							</mdb-col>
-							<mdb-col col="6" class=" text-left pt-3">
+							<mdb-col col="6" class=" text-right pt-3">
 								<mdb-btn color="white" @click="search" rounded>search</mdb-btn>
 							</mdb-col>
 						</mdb-row>
@@ -95,7 +97,7 @@ export default {
 	height: 100vh;
 	width:100vw;
 	flex-basis: row;
-	background-image: url("../assets/home.jpg");
+	background-image: url("../assets/home1.jpg");
 	 background-position: center; 
   background-repeat: no-repeat;
   background-size: cover;

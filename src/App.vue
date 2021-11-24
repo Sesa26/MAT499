@@ -1,6 +1,6 @@
 <template>
 	<div id="app">
-		<mdb-navbar color="indigo darken-4" position="top" dark>
+		<mdb-navbar color="white" position="top" light>
 			<mdb-navbar-brand :to="{ name: 'home' }">
 				Home
 			</mdb-navbar-brand>
