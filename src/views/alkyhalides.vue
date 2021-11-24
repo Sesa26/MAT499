@@ -4,7 +4,7 @@
 		<mdb-row class="justify-content-center">
 			<mdb-col col="5"> <mdb-input v-model="name" @change="convertFromName" outline label="IUPAC Name" /> </mdb-col>
 		</mdb-row>
-		<p class="text-center h4 blue lighten-5">Molecular Fomula</p>
+		<p class="text-center h4 blue lighten-5">Molecular Formula</p>
 		<mdb-row class="justify-content-center">
 			<!-- <mdb-col  class="justify-content-left"> -->
 			<mdb-select c id="halide" color="primary" v-model="helides" @getValue="halideChange" label="Select Hilide" size="lg" />
@@ -28,7 +28,7 @@
 				<span class="big animated bounceInRight">{{helide}}</span>
 			</mdb-col>
 		</mdb-row>
-		<p class="text-center h4 blue lighten-5 mt-3">Stuctural Fomula</p>
+		<p class="text-center h4 blue lighten-5 mt-3">Structural Formula</p>
 		<mdb-row class="justify-content-center">
 			<div class="d-flex" v-if="carbon != 0">
 				<initialHydrogen />

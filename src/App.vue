@@ -1,7 +1,7 @@
 <template>
 	<div id="app">
 		<mdb-navbar color="indigo darken-4" position="top" dark>
-			<mdb-navbar-brand :to="{name:'home'}">
+			<mdb-navbar-brand :to="{ name: 'home' }">
 				Home
 			</mdb-navbar-brand>
 			<mdb-navbar-toggler>
@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import { mdbNavbar, mdbNavbarBrand, mdbNavbarToggler, mdbNavbarNav, mdbNavItem } from "mdbvue";
+import { mdbNavbar, mdbNavbarBrand, mdbNavbarToggler, mdbNavbarNav, mdbNavItem, mdbInput } from "mdbvue";
 export default {
 	name: "NavbarPage",
 	components: {
@@ -38,6 +38,7 @@ export default {
 		mdbNavbarToggler,
 		mdbNavbarNav,
 		mdbNavItem,
+		mdbInput,
 	},
 };
 </script>

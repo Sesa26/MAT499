@@ -4,7 +4,7 @@
 		<mdb-row class="justify-content-center">
 			<mdb-col col="5"> <mdb-input v-model="name" @change="convertFromName" outline label="IUPAC Name" /> </mdb-col>
 		</mdb-row>
-		<p class="text-center h4 blue lighten-5">Molecular Fomula</p>
+		<p class="text-center h4 blue lighten-5">Molecular Formula</p>
 		<mdb-row class="justify-content-center">
 			<mdb-col v-if="molecula_processing">
 				<img src="@/assets/loader1.gif" alt="thumbnail" class="img-thumbna il" style="width: 100px" />
@@ -22,11 +22,11 @@
 				<!-- <mdb-input class="small nbox" id="hydrogen" outline label="" readOnly v-model="hydrogen" size="sm" style="" /> -->
 				<span class="big">O<sub class="small">2</sub></span>
 				<span class="big">C</span>
-				<mdb-input class="small nbox" id="carbon" type="number" :min="2" outline label="" @input="carbonChange" v-model="carbon2" size="sm" style="" />
+				<mdb-input class="small nbox" id="carbon" type="number" :min="2" :max="10" outline label="" @input="carbonChange" v-model="carbon2" size="sm" style="" />
 				<span class="big">H<sub class="small">{{hydrogen2}}</sub></span>
 			</mdb-col>
 		</mdb-row>
-		<p class="text-center h4 blue lighten-5  my-4">Stuctural Fomula</p>
+		<p class="text-center h4 blue lighten-5  my-4">Structural Formula</p>
 		<mdb-row class="justify-content-center">
 			<div class="d-flex" v-if="carbon > 0">
 				

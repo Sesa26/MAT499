@@ -22,7 +22,7 @@
 				<mdb-input class="small nbox" id="hydrogen" outline label="" readOnly v-model="hydrogen" size="sm" style="" />
 			</mdb-col>
 		</mdb-row>
-		<p class="text-center h4 blue lighten-5">Stuctural Fomula</p>
+		<p class="text-center h4 blue lighten-5">Structural Formula</p>
 		<mdb-row class="justify-content-center">
 			<div v-if="isCyclic">
 				<img src="@/assets/loader1.gif" alt="thumbnail" class="img-thumbna il" style="width: 100px" />
