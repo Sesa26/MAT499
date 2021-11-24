@@ -1,5 +1,5 @@
 <template>
-    <span class="black horizontalline align-self-center">.</span>
+    <span class="black horizontalline align-self-center"></span>
 </template>
 <script>
 export default {
