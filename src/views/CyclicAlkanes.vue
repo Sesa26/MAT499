@@ -20,7 +20,7 @@
 				<!-- <mdb-input class="small nbox" id="carbon" type="number" outline label="" @input="carbonChange" @blur="convertFromMoleculaFormula" v-model="carbon" size="sm" style="" /> -->
 				<span class="big">H</span>
 				<mdb-input class="small nbox" id="hydrogen" outline label="" readOnly v-model="hydrogen" size="sm" style="" />
-                //https://github.com/Sesa26/MAT499/blob/main/src/assets/cycloalkanes/cyclodecane.png
+                
 			</mdb-col>
 		</mdb-row>
 		<p class="text-center h4 blue lighten-5">Structural Formula</p>
