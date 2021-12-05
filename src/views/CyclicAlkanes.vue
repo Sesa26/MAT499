@@ -28,9 +28,9 @@
 				<img src='@/assets/cycloalkanes/cyclopropane.png' v-if="carbon == 3"  alt="cyclopropane" class="animated fadeIn " style="width: 40vw" />
 				<img src='@/assets/cycloalkanes/cyclobutane.png' v-if="carbon == 4"  alt="cyclobutane" class="animated fadeIn" style="width: 40vw" />
 				<img src='@/assets/cycloalkanes/cyclopentane.png' v-if="carbon == 5"  alt="cyclopentane" class="animated fadeIn" style="width: 40vw" />
-				<img src='@/assets/cycloalkanes/cyclohexane.png' v-if="carbon == 6"  alt="cyclohexane" class="animated fadeIn" style="width: 35vw" />
+				<img src='@/assets/cycloalkanes/cyclohexane.png' v-if="carbon == 6"  alt="cyclohexane" class="animated fadeIn" style="width: 30vw" />
 				<img src='@/assets/cycloalkanes/cycloheptane.png' v-if="carbon == 7"  alt="cycloheptane" class="animated fadeIn" style="width: 40vw" />
-				<img src='@/assets/cycloalkanes/cyclooctane.png' v-if="carbon == 8"  alt="cyclooctane" class="animated fadeIn" style="width: 40vw" />
+				<img src='@/assets/cycloalkanes/cyclooctane.png' v-if="carbon == 8"  alt="cyclooctane" class="animated fadeIn" style="width: 35vw" />
 				<img src='@/assets/cycloalkanes/cyclononane.png' v-if="carbon == 9"  alt="cyclononane" class="animated fadeIn" style="width: 40vw" />
 				<img src='@/assets/cycloalkanes/cyclodecane.png' v-if="carbon == 10"  alt="cyclodecane" class="animated fadeIn" style="width: 40vw" />
 			</div>
